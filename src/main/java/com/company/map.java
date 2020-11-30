@@ -1,6 +1,9 @@
 package com.company;
 
+import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
 import org.jgrapht.Graph;
+import org.jgrapht.alg.interfaces.ShortestPathAlgorithm;
+import org.jgrapht.alg.shortestpath.DijkstraShortestPath;
 import org.jgrapht.graph.*;
 
 import javax.imageio.ImageIO;
@@ -105,6 +108,35 @@ public class map {
         DefaultWeightedEdge OP = g2.addEdge("O", "P");
         g2.setEdgeWeight(OP, 1);
 
+        DefaultWeightedEdge DK = g2.addEdge("D", "K");
+        g2.setEdgeWeight(DK, 5);
+
+        DefaultWeightedEdge IL = g2.addEdge("I", "L");
+        g2.setEdgeWeight(IL, 2);
+
+        DefaultWeightedEdge LI = g2.addEdge("L", "I");
+        g2.setEdgeWeight(LI, 2);
+
+        DefaultWeightedEdge HN = g2.addEdge("H", "N");
+        g2.setEdgeWeight(HN, 2);
+
+        DefaultWeightedEdge NH = g2.addEdge("N", "H");
+        g2.setEdgeWeight(NH, 2);
+
+        DefaultWeightedEdge DE = g2.addEdge("D", "E");
+        g2.setEdgeWeight(DE, 1);
+
+        DefaultWeightedEdge ED = g2.addEdge("E", "D");
+        g2.setEdgeWeight(ED, 1);
+
+        DefaultWeightedEdge KI = g2.addEdge("K", "I");
+        g2.setEdgeWeight(KI, 3);
+
+        DefaultWeightedEdge IH = g2.addEdge("I", "H");
+        g2.setEdgeWeight(IH, 4);
+
+
+
         int counter = 0;
         Scanner userInput = new Scanner(System.in);
         boolean moving = true;
@@ -124,10 +156,22 @@ public class map {
             location = userInput.nextLine();
             counter += weight;
             System.out.println("You are now located at " + location + " and have traveled " + counter + " units");
+            if(location.equals("P")){
+                moving = false;
+            }
         }
+        path(g2);
+
 
 
 
     }
+    public static void path(Graph<String, DefaultWeightedEdge> g2){
+        DijkstraShortestPath<String, DefaultWeightedEdge> p = new DijkstraShortestPath<String, DefaultWeightedEdge>(g2);
+        System.out.println(p.getPath("A", "P"));
+        System.out.println(p.getPathWeight("A", "P"));
 
-}
+    }
+    }
+
+
