@@ -15,6 +15,7 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class map {
@@ -96,7 +97,7 @@ public class map {
             g2.setEdgeWeight(GH, 7);
 
             DefaultWeightedEdge HI = g2.addEdge("H", "I");
-            g2.setEdgeWeight(HI, 2);
+            g2.setEdgeWeight(HI, 3);
 
             DefaultWeightedEdge JK = g2.addEdge("J", "K");
             g2.setEdgeWeight(JK, 1);
@@ -152,85 +153,105 @@ public class map {
             DefaultWeightedEdge IH = g2.addEdge("I", "H");
             g2.setEdgeWeight(IH, 3);
 
-        }else{
+        }else {
             DefaultWeightedEdge AB = g2.addEdge("A", "B");
-            g2.setEdgeWeight(AB, (int) (Math.random() * 10) +1);
+            g2.setEdgeWeight(AB, (int) (Math.random() * 10) + 1);
 
             DefaultWeightedEdge AC = g2.addEdge("A", "C");
-            g2.setEdgeWeight(AC, (int) (Math.random() * 10) +1);
+            g2.setEdgeWeight(AC, (int) (Math.random() * 10) + 1);
 
             DefaultWeightedEdge CD = g2.addEdge("C", "D");
-            g2.setEdgeWeight(CD, (int) (Math.random() * 10) +1);
+            g2.setEdgeWeight(CD, (int) (Math.random() * 10) + 1);
 
             DefaultWeightedEdge BE = g2.addEdge("B", "E");
-            g2.setEdgeWeight(BE, (int) (Math.random() * 10) +1);
+            g2.setEdgeWeight(BE, (int) (Math.random() * 10) + 1);
 
             DefaultWeightedEdge EJ = g2.addEdge("E", "J");
-            g2.setEdgeWeight(EJ, (int) (Math.random() * 10) +1);
+            g2.setEdgeWeight(EJ, (int) (Math.random() * 10) + 1);
 
             DefaultWeightedEdge DG = g2.addEdge("D", "G");
-            g2.setEdgeWeight(DG, (int) (Math.random() * 10) +1);
+            g2.setEdgeWeight(DG, (int) (Math.random() * 10) + 1);
 
             DefaultWeightedEdge GH = g2.addEdge("G", "H");
-            g2.setEdgeWeight(GH, (int) (Math.random() * 10) +1);
+            g2.setEdgeWeight(GH, (int) (Math.random() * 10) + 1);
 
             DefaultWeightedEdge HI = g2.addEdge("H", "I");
-            g2.setEdgeWeight(HI, (int) (Math.random() * 10) +1);
+            g2.setEdgeWeight(HI, (int) (Math.random() * 10) + 1);
 
             DefaultWeightedEdge JK = g2.addEdge("J", "K");
-            g2.setEdgeWeight(JK, (int) (Math.random() * 10) +1);
+            g2.setEdgeWeight(JK, (int) (Math.random() * 10) + 1);
 
             DefaultWeightedEdge KL = g2.addEdge("K", "L");
-            g2.setEdgeWeight(KL, (int) (Math.random() * 10) +1);
+            g2.setEdgeWeight(KL, (int) (Math.random() * 10) + 1);
 
             DefaultWeightedEdge LM = g2.addEdge("L", "M");
-            g2.setEdgeWeight(LM, (int) (Math.random() * 10) +1);
+            g2.setEdgeWeight(LM, (int) (Math.random() * 10) + 1);
 
             DefaultWeightedEdge FL = g2.addEdge("F", "L");
-            g2.setEdgeWeight(FL, (int) (Math.random() * 10) +1);
+            g2.setEdgeWeight(FL, (int) (Math.random() * 10) + 1);
 
             DefaultWeightedEdge BF = g2.addEdge("B", "F");
-            g2.setEdgeWeight(BF, (int) (Math.random() * 10) +1);
+            g2.setEdgeWeight(BF, (int) (Math.random() * 10) + 1);
 
             DefaultWeightedEdge IN = g2.addEdge("I", "N");
-            g2.setEdgeWeight(IN, (int) (Math.random() * 10) +1);
+            g2.setEdgeWeight(IN, (int) (Math.random() * 10) + 1);
 
             DefaultWeightedEdge NO = g2.addEdge("N", "O");
-            g2.setEdgeWeight(NO, (int) (Math.random() * 10) +1);
+            g2.setEdgeWeight(NO, (int) (Math.random() * 10) + 1);
 
             DefaultWeightedEdge MO = g2.addEdge("M", "O");
-            g2.setEdgeWeight(MO, (int) (Math.random() * 10) +1);
+            g2.setEdgeWeight(MO, (int) (Math.random() * 10) + 1);
 
             DefaultWeightedEdge OP = g2.addEdge("O", "P");
-            g2.setEdgeWeight(OP, (int) (Math.random() * 10) +1);
+            g2.setEdgeWeight(OP, (int) (Math.random() * 10) + 1);
 
             DefaultWeightedEdge DK = g2.addEdge("D", "K");
-            g2.setEdgeWeight(DK, (int) (Math.random() * 10) +1);
+            g2.setEdgeWeight(DK, (int) (Math.random() * 10) + 1);
 
             DefaultWeightedEdge IL = g2.addEdge("I", "L");
-            g2.setEdgeWeight(IL, (int) (Math.random() * 10) +1);
+            g2.setEdgeWeight(IL, (int) (Math.random() * 10) + 1);
 
             DefaultWeightedEdge LI = g2.addEdge("L", "I");
-            g2.setEdgeWeight(LI, (int) (Math.random() * 10) +1);
+            g2.setEdgeWeight(LI, (int) (Math.random() * 10) + 1);
 
             DefaultWeightedEdge HN = g2.addEdge("H", "N");
-            g2.setEdgeWeight(HN, (int) (Math.random() * 10) +1);
+            g2.setEdgeWeight(HN, (int) (Math.random() * 10) + 1);
 
             DefaultWeightedEdge NH = g2.addEdge("N", "H");
-            g2.setEdgeWeight(NH, (int) (Math.random() * 10) +1);
+            g2.setEdgeWeight(NH, (int) (Math.random() * 10) + 1);
 
             DefaultWeightedEdge DE = g2.addEdge("D", "E");
-            g2.setEdgeWeight(DE, (int) (Math.random() * 10) +1);
+            g2.setEdgeWeight(DE, (int) (Math.random() * 10) + 1);
 
             DefaultWeightedEdge ED = g2.addEdge("E", "D");
-            g2.setEdgeWeight(ED, (int) (Math.random() * 10) +1);
+            g2.setEdgeWeight(ED, (int) (Math.random() * 10) + 1);
 
             DefaultWeightedEdge KI = g2.addEdge("K", "I");
-            g2.setEdgeWeight(KI, (int)(Math.random()*10)+1);
+            g2.setEdgeWeight(KI, (int) (Math.random() * 10) + 1);
 
             DefaultWeightedEdge IH = g2.addEdge("I", "H");
+            g2.setEdgeWeight(IH, (int) (Math.random() * 10) + 1);
 
-            g2.setEdgeWeight(IH, (int)(Math.random()*10)+1);
+            //System.out.println(IH.toString());
+
+            ArrayList<DefaultWeightedEdge> pairs = new ArrayList<>();
+            //from stack v
+            for (DefaultWeightedEdge e : g2.edgeSet()) {
+                pairs.add(e);
+            }
+
+            //not from stack v
+            for (DefaultWeightedEdge b : pairs) {
+                for (DefaultWeightedEdge e : pairs) { //this checks for duplicates
+                    if ((b.toString().substring(1, 2) + b.toString().substring(5,6)).equals(e.toString().substring(5, 6) + e.toString().substring(1, 2))) {
+                       // System.out.println("pair found");
+                        int randomNum = (int)(Math.random()*10)+1;
+                        g2.setEdgeWeight(e, randomNum);
+                        g2.setEdgeWeight(b, randomNum);
+                    }
+
+                }
+            }
         }
 
 
