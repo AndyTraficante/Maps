@@ -264,18 +264,31 @@ public class map {
         boolean moving = true;
 
         while (moving) {
-            System.out.println("You can move to ");
             int weight = 0;
+            while(true) {
+                System.out.println("You can move to ");
 
-            for (DefaultWeightedEdge e : g2.edgeSet()) {
-                if (String.valueOf(g2.getEdgeSource(e)).equals(location)) {
-                    weight = (int) g2.getEdgeWeight(e);
-                    System.out.println(g2.getEdgeTarget(e) + ": " + weight);
+
+                for (DefaultWeightedEdge e : g2.edgeSet()) {
+                    if (String.valueOf(g2.getEdgeSource(e)).equals(location)) {
+                        weight = (int) g2.getEdgeWeight(e);
+                        System.out.println(g2.getEdgeTarget(e) + ": " + weight);
+                    }
+
+
                 }
-
-
+                String location1 = new String();
+                location1 = location;
+                location = userInput.nextLine().toUpperCase();
+                if (!g2.edgeSet().contains(g2.getEdge(location1, location))) {
+                    System.out.println("invalid!");
+                    location = location1;
+                    System.out.println("You are located at " + location + " and have traveled " + counter + " units");
+                } else {
+                    break;
+                }
             }
-            location = userInput.nextLine().toUpperCase();
+
             counter += weight;
             System.out.println("You are now located at " + location + " and have traveled " + counter + " units");
             if (location.equals("P")) {
